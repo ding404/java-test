@@ -7,10 +7,10 @@ before_script:
       -e DOCKER_USERNAME=${DOCKER_USERNAME} \
       -e DOCKER_PASSWORD=${DOCKER_PASSWORD} \
       -e GITHUB_URL=${GITHUB_URL} \
-      --name sample-java \
-      ding404/sample-java:latest
+      --name java-pipeline \
+      ding404/java-pipeline:latest
 script:
-  - docker exec sample-java /stages/01_clone.sh
-  - docker exec sample-java /stages/02_build.sh
-  - docker exec sample-java /stages/03_test.sh
-  - docker exec sample-java /stages/04_archive.sh
+  - docker exec java-pipeline /stages/01_clone.sh
+  - docker exec java-pipeline /stages/02_build.sh
+  - docker exec java-pipeline /stages/03_test.sh
+  - docker exec java-pipeline /stages/04_archive.sh
