@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: edwardsdl/java-pipeline:latest
+      - image: ding404/java-pipeline:latest
     steps:
       - setup_remote_docker:
-          docker_layer_caching: true
+          docker_layer_caching: false
       - run:
           name: Clone
           command: /stages/01_clone.sh
